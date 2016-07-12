@@ -2,7 +2,11 @@
   "name": "servermedisport",
   "version": "1.0.0",
   "main": "./src/server.js",
-  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test spcefied\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "author": "Jorge Solano - jorge52an",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
