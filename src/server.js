@@ -2,9 +2,8 @@ var express = require( "express" );
 var app = express();
 var User = require( "./mongoosedb" ).User;
 
-app.get( "/", function( request, response )
+app.get( "/users", function( request, response )
 {
-    response.send( "Hello world" );
     User.find( function( error, users )
     {
         if( error )
