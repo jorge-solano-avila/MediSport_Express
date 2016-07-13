@@ -1,15 +1,22 @@
 var express = require( "express" );
-var app = express();
+var bodyParser = require( "body-parser" );
 var User = require( "./mongoosedb" ).User;
+var app = express();
 
-app.get( "/users", function( request, response )
+app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded( { extended: true } ) );
+
+app.post( "/users", function( request, response )
 {
-    User.find( function( error, users )
+    User.findOne( { "username": request.body.username }, function( error, user )
     {
         if( error )
             console.log( error );
 
-        response.json( users );
+        if( user.password === request.body.password )
+            response.json( user );
+        else
+            response.send( "Error" );
     } );
 } );
 
