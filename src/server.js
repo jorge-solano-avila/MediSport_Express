@@ -1,6 +1,7 @@
 var express = require( "express" );
 var bodyParser = require( "body-parser" );
 var User = require( "./mongoosedb" ).User;
+var Center = require( "./mongoosedb" ).Center;
 var app = express();
 
 app.use( bodyParser.json() );
@@ -37,6 +38,17 @@ app.post( "/newUser", function( request, response )
             response.send( error );
 
         response.send( "Save" );
+    } );
+} );
+
+app.get( "/centers", function( request, response )
+{
+    Center.find( function( error, centers )
+    {
+        if( error )
+            response.send( error );
+
+        response.json( centers );
     } );
 } );
 

@@ -9,17 +9,16 @@ mongoose.connect( "mongodb://jorge52an:jasa955025@ds017205.mlab.com:17205/medisp
         console.log( "connection" );
 } );
 
-/*
 var center = new Schema
 ( {
     name: String,
     address: String,
-    location: String
+    location: String,
     telephones: Array,
     photo: String,
     latitude: Number,
     longitude: Number
-}, { versionKey: false } );*/
+}, { versionKey: false } );
 
 var user = new Schema
 ( {
@@ -45,5 +44,6 @@ var user = new Schema
 }, { versionKey: false } );
 
 var User = mongoose.model( "User", user );
+var Center = mongoose.model( "Center", center );
 
 module.exports.User = User;
