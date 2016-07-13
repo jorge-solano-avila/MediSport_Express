@@ -84,7 +84,6 @@ app.post( "/centers", function( request, response )
                 var position = [request.body.latitude, request.body.longitude];
                 var center = [centers[i].latitude, centers[i].longitude];
                 var distance = getDistance( position, center );
-                console.log( distance );
                 if( distance < request.body.value )
                     nearbyCenters.push( centers[i] )
             }
