@@ -11,12 +11,14 @@ app.post( "/users", function( request, response )
     User.findOne( { "username": request.body.username }, function( error, user )
     {
         if( error )
-            console.log( error );
+            response.send( error );
 
-        if( user.password === request.body.password )
+        if( user === null )
+            response.send( "Username incorrect" );
+        else if( user.password === request.body.password )
             response.json( user );
         else
-            response.send( "Error" );
+            response.send( "Password incorrect" );
     } );
 } );
 
