@@ -47,3 +47,4 @@ var User = mongoose.model( "User", user );
 var Center = mongoose.model( "Center", center );
 
 module.exports.User = User;
+module.exports.Center = Center;
