@@ -53,12 +53,9 @@ app.post( "/newUser", function( request, response )
     user.save( function( error )
     {
         if( error )
-		{
             response.send( error );
-			console.log( error );
-		}
-
-        response.send( "Save" );
+		else
+        	response.send( "Save" );
     } );
 } );
 
