@@ -50,18 +50,28 @@ app.post( "/newUser", function( request, response )
         password: request.body.password
     } );
 
-    user.save( function( error )
-    {
-        if( error )
-            response.send( error );
-		else
+	User.findOne( { "username": request.body.username }, function( error, user )
+	{
+		if( user === null )
 		{
-			User.findOne( { "username": request.body.username }, function( error, user )
+			user.save( function( error )
 		    {
-		        response.json( user );
+		        if( error )
+		            response.send( error );
+				else
+				{
+					User.findOne( { "username": request.body.username }, function( error, user )
+				    {
+				        response.json( user );
+				    } );
+				}
 		    } );
 		}
-    } );
+		else
+		{
+			response.send( "Username in use" );
+		}
+	} );
 } );
 
 app.get( "/centers", function( request, response )
