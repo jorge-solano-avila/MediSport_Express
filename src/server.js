@@ -34,7 +34,7 @@ app.post( "/user", function( request, response )
 
         if( user === null )
             response.send( "Username incorrect" );
-        elseif( user.password === request.body.password )
+        else if( user.password === request.body.password )
             response.json( user );
         else
             response.send( "Password incorrect" );
