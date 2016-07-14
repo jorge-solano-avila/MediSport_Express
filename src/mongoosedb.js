@@ -26,11 +26,13 @@ var user = new Schema
     {
         type: String,
         required: "El nombre es necesario",
+        minlegth: [3, "El nombre es muy corto"]
     },
     username:
     {
         type: String,
         required: "El usuario es necesario",
+        minlegth: [4, "El usuario es muy corto"]
     },
     password:
     {
