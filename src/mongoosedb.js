@@ -25,20 +25,18 @@ var user = new Schema
     name:
     {
         type: String,
-        required: "El nombre es necesario",
-        minlegth: [3, "El nombre es muy corto"]
+        required: "El nombre es necesario."
     },
     username:
     {
         type: String,
-        required: "El usuario es necesario",
-        minlegth: [4, "El usuario es muy corto"]
+        required: "El usuario es necesario."
     },
     password:
     {
         type: String,
-        required: "La contraseña es necesaria",
-        minlegth: [5, "La contraseña es muy corta"]
+        required: "La contraseña es necesaria.",
+        minlegth: [5, "La contraseña debe tener 5 caracteres."]
     },
     birthday: Date,
     age: Number,
