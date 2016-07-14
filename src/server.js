@@ -50,9 +50,9 @@ app.post( "/newUser", function( request, response )
         password: request.body.password
     } );
 
-	User.findOne( { "username": request.body.username }, function( error, user )
+	User.findOne( { "username": request.body.username }, function( error, userFind )
 	{
-		if( user === null )
+		if( userFind === null )
 		{
 			user.save( function( error )
 		    {
