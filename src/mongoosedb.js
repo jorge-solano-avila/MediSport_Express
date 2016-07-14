@@ -1,7 +1,7 @@
 var mongoose = require( "mongoose" );
 var Schema = mongoose.Schema;
 
-mongoose.connect( "mongodb://jorge52an:mongolab1.@ds017205.mlab.com:17205/medisport", function( error )
+mongoose.connect( "mongodb://jorge52an:jasa955025@ds017205.mlab.com:17205/medisport", function( error )
 {
     if( error )
         console.log( error );
