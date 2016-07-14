@@ -17,7 +17,8 @@ var center = new Schema
     telephones: Array,
     photo: String,
     latitude: Number,
-    longitude: Number
+    longitude: Number,
+    web: String
 }, { versionKey: false } );
 
 var user = new Schema
@@ -36,7 +37,7 @@ var user = new Schema
     {
         type: String,
         required: "La contraseña es necesaria.",
-        minlegth: [5, "La contraseña debe tener 5 caracteres."]
+        minlength: [5, "La contraseña debe tener 5 caracteres."]
     },
     birthday: Date,
     age: Number,
