@@ -54,11 +54,13 @@ app.post( "/newUser", function( request, response )
     {
         if( error )
             response.send( error );
-    } );
-
-	User.findOne( { "username": request.body.username }, function( error, user )
-    {
-        response.json( user );
+		else
+		{
+			User.findOne( { "username": request.body.username }, function( error, user )
+		    {
+		        response.json( user );
+		    } );
+		}
     } );
 } );
 
