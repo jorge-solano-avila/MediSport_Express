@@ -39,6 +39,7 @@ var user = new Schema
         required: "La contraseña es necesaria.",
         minlength: [5, "La contraseña debe tener 5 caracteres."]
     },
+    telephone: Number,
     birthday: Date,
     age: Number,
     photo: String
